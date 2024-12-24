@@ -1,5 +1,5 @@
 """
-URL configuration for core project.
+URL configuration for L2 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -19,9 +19,7 @@ from django.urls import path
 from home import views
 
 urlpatterns = [
-    path('',views.home),
-    path('first-lession',views.firstLession, name='firstLession'),
-    path('from-html',views.story, name="story"),
-    path('basu-html/',views.htmlFile, name="basu"),
+    path('', views.first_app, name="firstApp"),
+    path('people/',views.person, name="people"),
     path('admin/', admin.site.urls),
 ]

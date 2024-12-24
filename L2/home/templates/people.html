@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People Details</title>
+</head>
+<style>
+  table {
+      width: 50%;
+      border-collapse: collapse;
+      margin: 20px auto;
+  }
+  th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+  }
+  th {
+      background-color: #f4f4f4;
+  }
+  tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+  tr:hover {
+      background-color: #f1f1f1;
+  }
+  h1{
+    text-align:center
+  }
+</style>
+<body>
+  <h1>People Details</h1>
+  <table>
+    <thead>
+        <tr>
+            <th>S. No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Text</th>
+            <th>Can Vote</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in people %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.age}}</td>
+            <td>{{text | truncatechars:8}}</td>
+            <td {% if p.age < 18 %} style="background:red"{% endif %} >
+              {% if p.age >= 18 %}
+                👍
+              {% else %}
+                👎
+              {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
