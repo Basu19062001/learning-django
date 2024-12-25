@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block start %}
+
+<h1>Hello! This is Home Django project</h1>
+  <p>{% lorem 5 b random %}</p>
+
+  <a href="/about/"> About</a>
+  ||
+  <a href="/auth/"> Auth</a>
+
+  {% endblock start %}

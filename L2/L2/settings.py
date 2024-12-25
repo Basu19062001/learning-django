@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 ]
 
 EXTERNAL_APPS = [
-    'home',   
+    'home', 
+    'Student_DB',  
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS

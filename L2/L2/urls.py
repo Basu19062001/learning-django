@@ -21,5 +21,10 @@ from home import views
 urlpatterns = [
     path('', views.first_app, name="firstApp"),
     path('people/',views.person, name="people"),
+    
+    path('home/',views.home, name="home"),
+    path('about/',views.about, name="about"),
+    path('auth/',views.auth, name="auth"),
+    
     path('admin/', admin.site.urls),
 ]
