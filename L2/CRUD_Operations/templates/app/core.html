@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Details | {{page}}</title>
+</head>
+<style>
+  table {
+      width: 50%;
+      border-collapse: collapse;
+      margin: 20px auto;
+  }
+  th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+  }
+  th {
+      background-color: #f4f4f4;
+  }
+  tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+  tr:hover {
+      background-color: #f1f1f1;
+  }
+  h1{
+    text-align:center
+  }
+</style>
+<body>
+  <h1>People Details</h1>
+  <table>
+    <thead>
+        <tr>
+            <th>S. No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Can vote</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for name in names %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{name.name}}</td>
+            <td>{{name.age}}</td>
+            <td {% if name.age < 18 %} style="background:red" {% endif %}>
+              {% if name.age >= 18 %}
+              👍
+              {% else %}
+              👎
+              {% endif %}
+            </td>
+            <td>{{text | truncatechars:10}}</td>
+          </tr>
+          {% endfor %}
+    </tbody>
+
+  </table>
+  <a href="/about/">Aboutt</a>||
+  <a href="/contact/">Contact</a>
+</body>
+</html>
